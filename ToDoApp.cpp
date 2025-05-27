@@ -4,24 +4,13 @@
 #include <limits>
 #include <chrono>
 #include <thread>
-
+#include <string>
 namespace Todo_app {
     void clearScreen() {
         std::cout << "\033[2J\033[1;1H";
     }
 
-    void getInput(int& variable) {
-        while (!(std::cin >> variable)) {
-            println("Invalid input, please enter a number.");
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        }
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    }
 
-    void getInput(std::string& variable) {
-        std::getline(std::cin, variable);
-    }
 
     void getListAction(int& choice, const ToDoList& toDoList) {
         println("What do you want to do with your list?\n");
@@ -32,7 +21,8 @@ namespace Todo_app {
         if (!toDoList.list.empty()) {
             toDoList.printList();
         }
-        getInput(choice);
+        std::cin >> choice;
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
 
     void AddElement(ToDoList& toDoList) {
@@ -41,7 +31,7 @@ namespace Todo_app {
             toDoList.printList();
         }
         std::string element;
-        getInput(element);
+        std::getline(std::cin, element);
         toDoList.addElement(element);
     }
 
@@ -55,7 +45,8 @@ namespace Todo_app {
         println("Choose the element you want to remove (by number):");
         toDoList.printList();
         int elementId;
-        getInput(elementId);
+        std::cin >> elementId;
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         toDoList.removeElement(elementId);
     }
 
@@ -67,8 +58,9 @@ namespace Todo_app {
         println("Which element do you want to edit (by number)?");
         toDoList.printList();
         int elementId;
-        getInput(elementId);
-        if (elementId < 1 || elementId > static_cast<int>(toDoList.list.size())) {
+        std::cin >> elementId;
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        if (elementId < 1 || elementId > toDoList.list.size()) {
             clearScreen();
             println("Invalid element ID.");
             std::this_thread::sleep_for(std::chrono::seconds(1));
@@ -78,7 +70,7 @@ namespace Todo_app {
         println("Enter the new value for the element:");
         toDoList.printList();
         std::string element;
-        getInput(element);
+        std::getline(std::cin, element);
         toDoList.editElement(elementId, element);
     }
 }
