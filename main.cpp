@@ -25,7 +25,7 @@ public:
 
     // Adds an element to the to do list
     void addElement(const std::string& value) {
-        list.push_back(ListElement(value)); // NOTE FOR MYSELF: emplace_back automatically constructs a ListElement with the given value bc it knows the vector stores that type
+        list.push_back(ListElement(value)); 
     }
 
     // Edits an element in the to do list
