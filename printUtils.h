@@ -15,7 +15,7 @@ void print(const T& first, const Args&... rest) {
 
 template<typename T>
 void println(const T& value) {
-    std::cout << value << '\n';  // or use std::endl if you need flushing
+    std::cout << value << '\n'; 
 }
 
 template<typename T, typename... Args>
