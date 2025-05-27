@@ -6,7 +6,7 @@
 #include <thread>
 
 //my (very simple) print utils
-#include "printUtils.h"
+#include "./printUtils.h"
 
 //List element class
 class ListElement{
