@@ -24,6 +24,9 @@ namespace Todo_app {
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
 
+
+
+    // extracted switch case functions 
     void AddElement(ToDoList& toDoList) {
         std::printf("Enter the element you want to add:\n");
         if (!toDoList.list.empty()) {
