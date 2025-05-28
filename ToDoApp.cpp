@@ -1,5 +1,4 @@
-#include "TodoApp.h"
-#include "printUtils.h"
+#include "ToDoApp.h"
 #include <iostream>
 #include <limits>
 #include <chrono>
@@ -11,7 +10,7 @@ namespace Todo_app {
         std::cout << "\033[2J\033[1;1H";
     }
 
-    void getListAction(int& choice, const ToDoList& toDoList) {
+    void getListAction(int& choice, ToDoList& toDoList) {
         std::printf("What do you want to do with your list?\n\n");
         std::printf("[1] Add an element\n");
         std::printf("[2] Remove an element\n");

@@ -2,7 +2,6 @@
 
 #include <string>
 #include <vector>
-#include "printUtils.h"
 #include "ListElementClass.h"
 // ToDoList class that manages a list of ListElement objects
 class ToDoList {
@@ -19,7 +18,7 @@ public:
     // Removes an element from the to do list
     void removeElement(int elementId) {
         if (elementId < 1 || elementId > list.size()) {
-            println("Invalid element ID.");
+            std::printf("Invalid element ID.");
             return;
         }
         list.erase(list.begin() + elementId - 1);

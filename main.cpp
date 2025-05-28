@@ -1,4 +1,4 @@
-#include "TodoApp.h"
+#include "ToDoApp.h"
 #include <chrono>
 #include <thread>
 
@@ -27,7 +27,7 @@ int main() {
                 return 0;
             default:
                 clearScreen();
-                println("Invalid choice. Please try again.");
+                std::printf("Invalid choice. Please try again.");
                 std::this_thread::sleep_for(std::chrono::seconds(3));
                 break;
         }
