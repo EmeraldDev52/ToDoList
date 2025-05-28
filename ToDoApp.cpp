@@ -20,7 +20,7 @@ namespace Todo_app {
             toDoList.printList();
         }
         std::cin >> choice;
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cin.ignore();
     }
 
 
