@@ -6,7 +6,7 @@ void ToDoList::addElement(const std::string& value) {
 }
 
 void ToDoList::editElement(int elementId, const std::string& value) {
-    if (elementId < 1 || elementId > list.size()) {
+    if (elementId < 1 || elementId > static_cast<int>(list.size())) {
         std::printf("Invalid element ID.");
         return;
     }
