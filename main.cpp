@@ -28,7 +28,7 @@ int main() {
             default:
                 clearScreen();
                 println("Invalid choice. Please try again.");
-                std::this_thread::sleep_for(std::chrono::seconds(1));
+                std::this_thread::sleep_for(std::chrono::seconds(3));
                 break;
         }
     }

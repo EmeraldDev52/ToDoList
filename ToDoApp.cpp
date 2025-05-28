@@ -41,7 +41,7 @@ namespace Todo_app {
         if (toDoList.list.empty()) {
             clearScreen();
             std::printf("The list is empty. Nothing to remove.\n");
-            std::this_thread::sleep_for(std::chrono::seconds(1));
+            std::this_thread::sleep_for(std::chrono::seconds(3));
             return;
         }
         std::printf("Choose the element you want to remove (by number):\n");
@@ -65,7 +65,7 @@ namespace Todo_app {
         if (elementId < 1 || elementId > toDoList.list.size()) {
             clearScreen();
             std::printf("Invalid element ID.\n");
-            std::this_thread::sleep_for(std::chrono::seconds(1));
+            std::this_thread::sleep_for(std::chrono::seconds(3));
             return;
         }
         clearScreen();

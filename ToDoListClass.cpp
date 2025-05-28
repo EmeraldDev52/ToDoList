@@ -1,5 +1,3 @@
-#pragma once
-
 #include <string>
 #include <vector>
 #include "printUtils.h"
@@ -11,10 +9,18 @@ public:
     std::vector<ListElement> list;
 
     // Adds an element to the to do list
-    void addElement(const std::string& value);
+    void addElement(const std::string& value) {
+        list.push_back(ListElement(value)); 
+    }
 
     // Edits an element in the to do list
-    void editElement(int elementId, const std::string& value);
+    void editElement(int elementId, const std::string& value) {
+        if (elementId < 1 || elementId > list.size()) {
+            println("Invalid element ID.");
+            return;
+        }
+        list[elementId - 1].value = value; 
+    }
 
     // Removes an element from the to do list
     void removeElement(int elementId) {
@@ -26,5 +32,14 @@ public:
     }
 
     // Prints the to-do list
-    void printList();
+    void printList() const {
+        if (list.empty()) {
+            println("The list is empty.");
+            return;
+        }
+        println("Your list:");
+        for (size_t i = 0; i < list.size(); ++i) {
+            println(std::to_string(i + 1) + ". " + list[i].value);
+        }
+    }
 };
