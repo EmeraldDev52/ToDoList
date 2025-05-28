@@ -13,10 +13,10 @@ public:
     void addElement(const std::string& value);
 
     // Edits an element in the to do list
-    void editElement(int elementId, const std::string& value);
+    void editElement(size_t elementId, const std::string& value);
 
     // Removes an element from the to do list
-    void removeElement(int elementId) {
+    void removeElement(size_t elementId) {
         if (elementId < 1 || elementId > list.size()) {
             std::printf("Invalid element ID.");
             return;
