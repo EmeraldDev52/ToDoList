@@ -5,7 +5,7 @@ namespace Todo_app {
     void clearScreen();
     void getInput(int& variable);
     void getInput(std::string& variable);
-    void getListAction(int& choice, const ToDoList& toDoList);
+    void getListAction(int& choice, ToDoList& toDoList);
     void AddElement(ToDoList& toDoList);
     void RemoveElement(ToDoList& toDoList);
     void EditElement(ToDoList& toDoList);
