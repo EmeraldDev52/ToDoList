@@ -5,7 +5,6 @@
 class ListElement{
 public:
     std::string value;
-    
     ListElement(const std::string& val) : value(val) {}
 
 };
