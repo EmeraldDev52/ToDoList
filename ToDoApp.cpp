@@ -24,7 +24,6 @@ namespace Todo_app {
     }
 
 
-
     // extracted switch case functions 
     void AddElement(ToDoList& toDoList) {
         std::printf("Enter the element you want to add:\n");
